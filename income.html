@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Income</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!---------------------------------------------------------------------------------------------Navigation Bar--------------------------------------------------------------------------------------------->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="main.html">Main</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="income.html">Income</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="outcome.html">Outcome</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">About Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+<!---------------------------------------------------------------------------------------------Form--------------------------------------------------------------------------------------------->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <form onsubmit="event.preventDefault(); storeTransactionData();">
+        <div class="mb-3">
+          <label for="TrName" class="form-label">Transaction Name</label>
+          <input type="text" class="form-control" id="TrName" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="Trnom" class="form-label">Transaction Nominal</label>
+          <input type="text" class="form-control" id="Trnom">
+        </div>
+        <div class="mb-3">
+          <label for="Trtype" class="form-label">Transaction Type</label>
+          <select class="form-select" id="Trtype">
+            <option selected></option>
+            <option value="Makan">Makan</option>
+            <option value="Main">Main</option>
+            <option value="Edukasi">Edukasi</option>
+            <option value="Belanja">Belanja</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!---------------------------------------------------------------------------------------------Javascript--------------------------------------------------------------------------------------------->
+<script>
+    window.onload = function() {
+        var username = localStorage.getItem('username');
+        if (username) {
+            document.querySelector('.navbar-brand').innerHTML = '<img src="Asset/money.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Hello, ' + username;
+        }
+
+      var username = localStorage.getItem('username');
+      document.querySelector('.navbar-brand').innerHTML = '<img src="Asset/money.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Hello, ' + username;
+  }
+
+  function storeTransactionData() {
+    var trName = document.getElementById('TrName').value;
+    var trNom = document.getElementById('Trnom').value;
+    var trType = document.getElementById('Trtype').value;
+
+    var transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    transactions.push({
+        name: trName,
+        nominal: trNom,
+        type: trType
+    });
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+
+    var balance = Number(localStorage.getItem('balance')) || 0;
+    balance += Number(trNom);
+    localStorage.setItem('balance', balance.toString());
+
+    window.location.href = 'main.html';
+}
+</script>
+<!---------------------------------------------------------------------------------------------framework & connct main.js--------------------------------------------------------------------------------------------->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+</html>
