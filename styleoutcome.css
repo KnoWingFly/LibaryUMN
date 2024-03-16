@@ -1,0 +1,39 @@
+body {
+    background-image: url('Asset/photo-1519120944692-1a8d8cfc107f.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: monospace;
+}
+
+.title h1 {
+    color: #000000;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    align-items: center;
+    gap: 2rem;
+    text-align: start;
+    margin-top: 3%;
+    color: #FFC107;
+}
+
+#kotakInput {
+    background-color: #282a3aea;
+    border-radius: 20px;
+    max-width: 60%;
+}
+
+#success {
+    color: #282A3A;
+}

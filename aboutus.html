@@ -32,7 +32,7 @@
                         <a class="nav-link" href="outcome.html">Outcome</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="aboutus.html">About us</a>
+                        <a class="nav-link active" aria-current="page" href="aboutus.html">About Us</a>
                     </li>
                 </ul>
             </div>
@@ -41,7 +41,7 @@
     <!---------------------------------------------------------------------------------------------About us--------------------------------------------------------------------------------------------->
 
     <section class="team">
-        <div class="title">
+        <div class="title mt-5 mb-4">
             <h1><strong>About Us</strong></h1>
         </div>
 
@@ -73,12 +73,12 @@
         </div>
     </section>
     <script>
-        window.onload = function() {
+        window.onload = function () {
             var username = localStorage.getItem('username');
             if (username) {
-            document.querySelector('.navbar-brand').innerHTML = '<img src="Asset/money.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Hello, ' + username;
+                document.querySelector('.navbar-brand').innerHTML = '<img src="Asset/money.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Hello, ' + username;
+            }
         }
-    }
     </script>
 </body>
 
