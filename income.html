@@ -7,7 +7,6 @@
     <title>Income</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -48,12 +47,12 @@
         </div>
         <div class="mb-3">
           <label for="Trnom" class="form-label">Transaction Nominal</label>
-          <input type="text" class="form-control" id="Trnom">
+          <input type="number" class="form-control" id="Trnom">
         </div>
         <div class="mb-3">
           <label for="Trtype" class="form-label">Transaction Type</label>
           <select class="form-select" id="Trtype">
-            <option selected></option>
+            <option selected disabled value="">Please select a transaction type</option>
             <option value="Makan">Makan</option>
             <option value="Main">Main</option>
             <option value="Edukasi">Edukasi</option>
@@ -62,48 +61,101 @@
           </select>
         </div>
         <div class="d-grid">
-          <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+          <button type="submit" class="btn btn-primary mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Submit
+          </button>
         </div>
       </form>
     </div>
+    
+<!---------------------------------------------------------------------------------------------Modal Success--------------------------------------------------------------------------------------------->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="successModalLabel">Transaction Success</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="Asset/check.gif" class="img-fluid" style="max-width: 50%;">
+        <p class="mt-3 mb-0">Press Close, to continue</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="window.location.href='main.html'">Oke</button>
+      </div>
+    </div>
   </div>
 </div>
-
+<!---------------------------------------------------------------------------------------------Modal Failed--------------------------------------------------------------------------------------------->
+<div class="modal fade" id="failedModal" tabindex="-1" aria-labelledby="failedModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="failedModalLabel">Transaction Failed</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="Asset/fail.gif" class="img-fluid" style="max-width: 50%;">
+        <p class="mt-3 mb-0">Please fill out the form completely to proceed with the transaction.</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!---------------------------------------------------------------------------------------------Javascript--------------------------------------------------------------------------------------------->
 <script>
+
+//---------------------------------------------------------------------------------------------Show Modal -----------------------------------------------------------------------------------------//
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var trName = document.getElementById('TrName').value.trim();
+    var trNom = document.getElementById('Trnom').value.trim();
+    var trType = document.getElementById('Trtype').value.trim();
+
+    if (!trName || !trNom || !trType) {
+        var failedModal = new bootstrap.Modal(document.getElementById('failedModal'), {});
+        failedModal.show();
+    } else {
+        var transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+        var timestamp = new Date().getTime();
+        localStorage.setItem('transactions', JSON.stringify(transactions));
+
+        var successModal = new bootstrap.Modal(document.getElementById('successModal'), {});
+        successModal.show();
+    }
+});
+
+//---------------------------------------------------------------------------------------------Name in Hello -----------------------------------------------------------------------------------------//
     window.onload = function() {
         var username = localStorage.getItem('username');
         if (username) {
             document.querySelector('.navbar-brand').innerHTML = '<img src="Asset/money.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Hello, ' + username;
         }
-
-      var username = localStorage.getItem('username');
-      document.querySelector('.navbar-brand').innerHTML = '<img src="Asset/money.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Hello, ' + username;
   }
 
+//---------------------------------------------------------------------------------------------Storing data-----------------------------------------------------------------------------------------//
   function storeTransactionData() {
-    var trName = document.getElementById('TrName').value;
-    var trNom = document.getElementById('Trnom').value;
-    var trType = document.getElementById('Trtype').value;
+    var trName = document.getElementById('TrName').value.trim();
+    var trNom = document.getElementById('Trnom').value.trim();
+    var trType = document.getElementById('Trtype').value.trim();
 
+    if (!trName || !trNom || !trType) {
+        return;
+    }
     var transactions = JSON.parse(localStorage.getItem('transactions')) || [];
-    transactions.push({
-        name: trName,
-        nominal: trNom,
-        type: trType
-    });
+    transactions.push({name: trName, nominal: trNom, type: trType});
     localStorage.setItem('transactions', JSON.stringify(transactions));
 
     var balance = Number(localStorage.getItem('balance')) || 0;
     balance += Number(trNom);
     localStorage.setItem('balance', balance.toString());
-
-    window.location.href = 'main.html';
 }
 </script>
-<!---------------------------------------------------------------------------------------------framework & connct main.js--------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------framework--------------------------------------------------------------------------------------------->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
