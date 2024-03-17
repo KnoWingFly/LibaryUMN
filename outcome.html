@@ -163,7 +163,7 @@
             return;
           }
           var transactions = JSON.parse(localStorage.getItem('transactions')) || [];
-          transactions.push({ name: trName, nominal: trNom, type: trType });
+          transactions.push({ name: trName, nominal: trNom, type: trType, transaction: 'outcome' });
           localStorage.setItem('transactions', JSON.stringify(transactions));
 
           var balance = Number(localStorage.getItem('balance')) || 0;

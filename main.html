@@ -74,27 +74,34 @@ window.onload = function() {
   }
 
 //--------------------------------------------------------------------------------------------- Transaction & balance -----------------------------------------------------------------------------------------//
-  var transactions = JSON.parse(localStorage.getItem('transactions')) || [];
-  var transactionsDiv = document.querySelector('.transactions'); 
-  transactions.forEach(function(transaction) {
-    if (transaction.name && transaction.nominal && transaction.type) {
-      var transactionElement = document.createElement('div');
-      transactionElement.innerHTML = '<p>Name: ' + transaction.name + '</p>' +
+var transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+var transactionsDiv = document.querySelector('.transactions'); 
+transactions.forEach(function(transaction) {
+  if (transaction.name && transaction.nominal && transaction.type) {
+    var transactionElement = document.createElement('div');
+    if (transaction.transaction === 'income') {
+      transactionElement.innerHTML = '<div class="transaction income-transaction">' +
+                                     '<p>Name: ' + transaction.name + '</p>' +
                                      '<p>Nominal: ' + transaction.nominal + '</p>' +
-                                     '<p>Type: ' + transaction.type + '</p>';
-      transactionsDiv.appendChild(transactionElement);
+                                     '<p>Type: ' + transaction.type + '</p>' +
+                                     '</div>';
+    } else if (transaction.transaction === 'outcome') {
+      transactionElement.innerHTML = '<div class="transaction outcome-transaction">' +
+                                     '<p>Name: ' + transaction.name + '</p>' +
+                                     '<p>Nominal: ' + transaction.nominal + '</p>' +
+                                     '<p>Type: ' + transaction.type + '</p>' +
+                                     '</div>';
     }
-  });
-
-  var balance = Number(localStorage.getItem('balance'));
-
-  if (isNaN(balance)) {
-    balance = 0;
+    transactionsDiv.appendChild(transactionElement);
   }
-  
-  document.querySelector('.balance').innerHTML = "Rp." + balance;
-}
+});
 
+var balance = Number(localStorage.getItem('balance'));
+if (isNaN(balance)) {
+  balance = 0;
+}
+document.querySelector('.balance').innerHTML = 'Balance: ' + balance;
+}
 //---------------------------------------------------------------------------------------------Reset data (debugging)-----------------------------------------------------------------------------------------//
 function resetData() {
     localStorage.removeItem('transactions');

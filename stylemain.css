@@ -17,3 +17,15 @@ body {
     border: solid 10px;
     border-color: rgb(44, 255, 195);
 }
+
+.transaction {
+    color: black; 
+  }
+  
+  .transaction.income-transaction {
+    color: green;
+  }
+  
+  .transaction.outcome-transaction {
+    color: red;
+  }
