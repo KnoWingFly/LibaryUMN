@@ -40,29 +40,42 @@
       </nav>
 
   <!---------------------------------------------------------------------------------------------Main Menu--------------------------------------------------------------------------------------------->
-  <div class="container">
-    <div class="d-flex flex-column flex-lg-row justify-content-between mt-5">
-      <div id="balance-container" class="d-flex flex-row row rounded me-0 me-lg-4 rounded p-2 w-100" style="height: 15rem; ">
-        <div class="col-6 justify-content-start align-text-top mt-4 ms-2">
-            <h2>Balance:</h2>
+  <div class="container-fluid">
+
+    <div class="row mt-5">
+
+      <div id="balance-container" class="col-12 col-lg-5 me-0 me-lg-5 rounded p-2">
+
+        <div class="row" style="height: 15rem;">
+
+          <div class="col-6 justify-content-start align-text-top pt-2 ps-4">
+            <h2 class="fw-bold">Balance</h2>
+          </div>
+
+          <div class="col-5 text-end justify-content-end align-self-center mx-2">
+            <h2 class="balance fw-bolder"></h2>
+          </div>
+
         </div>
-        <h2 class="d-flex flex-column balance ms-3 col-5 text-end justify-content-center"></h2>
+
       </div>
+
 
       <div class="col-12 text-start col-lg-6 mt-5 mt-lg-0 rounded" style="background-color: white;">
         <h2 class="transactions"></h2>
       </div>
 
     </div>
-  </div>
 
-  <div class="container">
-    <div class="row justify-content-center justify-content-lg-end">
-      <div class="col-12 col-lg-6 text-center text-lg-end mt-4">
+</div>
+
+<div class="container-fluid">
+  <div class="row justify-content-center justify-content-lg-end">
+    <div class="col-12 col-lg-6 text-center text-lg-end mt-4">
         <button onclick="resetData()" class="btn btn-danger">Reset Data</button>
-      </div>
     </div>
   </div>
+</div>
 
 <!---------------------------------------------------------------------------------------------Javascript--------------------------------------------------------------------------------------------->
 <script>
@@ -100,7 +113,7 @@ var balance = Number(localStorage.getItem('balance'));
 if (isNaN(balance)) {
   balance = 0;
 }
-document.querySelector('.balance').innerHTML = 'Balance: ' + balance;
+document.querySelector('.balance').innerHTML = 'Rp. ' + balance;
 }
 //---------------------------------------------------------------------------------------------Reset data (debugging)-----------------------------------------------------------------------------------------//
 function resetData() {
