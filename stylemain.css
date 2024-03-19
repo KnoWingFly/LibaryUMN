@@ -19,13 +19,49 @@ body {
 }
 
 .transaction {
-    color: black; 
-  }
-  
-  .transaction.income-transaction {
-    color: green;
-  }
-  
-  .transaction.outcome-transaction {
-    color: red;
-  }
+  font-family: Arial, sans-serif;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f8f8f8;
+}
+
+.transaction p {
+  margin: 0;
+}
+
+.transaction .type{
+  color: black;
+}
+
+.transaction .name{
+  color: gray;
+}
+
+.transaction .transaction-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 3;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+}
+
+
+.transaction .nominal {
+  flex: 1;
+  text-align: right;
+}
+
+.income-transaction {
+  background-color: #e0f7fa;
+}
+
+.outcome-transaction {
+  background-color: #ffebee; 
+}
