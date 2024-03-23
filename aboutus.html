@@ -33,7 +33,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="goals.html">Goals</a>
-                      </li>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="aboutus.html">About Us</a>
                     </li>
@@ -47,30 +47,60 @@
         <div class="title mt-5 mb-4">
             <h1><strong>About Us</strong></h1>
         </div>
+        <div class="title mb-4">
+            <h1><strong>Kelompok 2</strong></h1>
+        </div>
 
         <div class="fotoKotak">
             <div class="kotak">
                 <img src="Asset/gigagif.gif">
                 <h3 class="mt-2">Fernando Sunarto</h3>
                 <h5>00000083441</h5>
+                <div class="popup" id="popup-1">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="close-btn" onclick="togglePopup()">&times;
+                        </div>
+                        <h1>Quotes</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, veritatis? Amet
+                            corporis temporibus nemo laudantium eius? Ducimus delectus, ea, doloribus architecto minus
+                            consectetur nesciunt saepe magnam at labore deleniti molestias.</p>
+                    </div>
+                </div>
+                <button onclick="togglePopup()" class="btn btn-outline-warning mx-auto" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    <strong>Quotes</strong>
+                </button>
             </div>
 
             <div class="kotak">
                 <img src="Asset/gigagif.gif">
                 <h3 class="mt-2">Anggatha C. Virya</h3>
                 <h5>00000082588</h5>
+                <button type="submit" class="btn btn-outline-warning mx-auto" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    <strong>Quotes</strong>
+                </button>
             </div>
 
             <div class="kotak">
                 <img src="Asset/gigagif.gif">
                 <h3 class="mt-2">Fabian D. Candra</h3>
                 <h5>00000087657</h5>
+                <button type="submit" class="btn btn-outline-warning mx-auto" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    <strong>Quotes</strong>
+                </button>
             </div>
 
             <div class="kotak">
                 <img src="Asset/gigagif.gif">
                 <h3 class="mt-2">Steven Jonathan</h3>
                 <h5>00000087645</h5>
+                <button type="submit" class="btn btn-outline-warning mx-auto" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    <strong>Quotes</strong>
+                </button>
             </div>
 
         </div>
@@ -82,11 +112,14 @@
                 document.querySelector('.navbar-brand').innerHTML = '<img src="Asset/money.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Hello, ' + username;
             }
         }
+        function togglePopup() {
+            document.getElementById("popup-1").classList.toggle("active");
+        }
     </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous">
-    </script>
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
