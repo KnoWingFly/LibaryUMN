@@ -1,21 +1,21 @@
 body {
-    background-image: url('Asset/photo-1519120944692-1a8d8cfc107f.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: monospace;
+  background-image: url('Asset/photo-1519120944692-1a8d8cfc107f.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: monospace;
 }
 
-.container-fluid {
+#transaction-interface {
   max-width: 95%;
 }
 
 #balance-container {
-    background-color: rgb(194, 248, 239);
-    border: solid 10px;
-    border-color: rgb(44, 255, 195);
+  background-color: rgb(194, 248, 239);
+  border: solid 10px;
+  border-color: rgb(44, 255, 195);
 }
 
 .transaction {
@@ -34,11 +34,11 @@ body {
   margin: 0;
 }
 
-.transaction .type{
+.transaction .type {
   color: black;
 }
 
-.transaction .name{
+.transaction .name {
   color: gray;
 }
 
@@ -47,9 +47,9 @@ body {
   flex-direction: column;
   justify-content: center;
   flex: 3;
-  overflow: hidden; 
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 
@@ -63,5 +63,5 @@ body {
 }
 
 .outcome-transaction {
-  background-color: #ffebee; 
+  background-color: #ffebee;
 }
