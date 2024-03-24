@@ -8,8 +8,22 @@ body {
     font-family: monospace;
 }
 
+#title{
+    color: #000000;
+	font-size: 4rem;
+	text-align: center;
+}
+
 #success {
     color: #282A3A;
+}
+
+#kotak{
+    padding: 17px;
+    color: #FFC107;
+    background-color: #282a3aea;
+    border-radius: 30px;
+    margin-top: 80px;
 }
 
 .progress-bar {
@@ -19,3 +33,11 @@ body {
 .progress {
     height: 2rem; 
   }
+
+.border {
+    background-color: #282a3aea;
+    color: #FFC107;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+}
