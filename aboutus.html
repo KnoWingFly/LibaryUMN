@@ -49,7 +49,7 @@
         <div class="title mb-4">
             <h1><strong>Kelompok 2</strong></h1>
         </div>
-    
+
         <div class="fotoKotak">
             <div class="kotak">
                 <div class="front">
@@ -102,9 +102,7 @@
                 </div>
                 <div class="back" style="display: none;">
                     <h1>Quotes</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, veritatis? Amet
-                        corporis temporibus nemo laudantium eius? Ducimus delectus, ea, doloribus architecto minus
-                        consectetur nesciunt saepe magnam at labore deleniti molestias.</p>
+                    <p>DON'T CRY. I AM JUST A FISH</p>
                     <button class="btn btn-outline-warning mx-auto" onclick="toggleFlip(this.parentNode.parentNode)">
                         <strong>Flip Back</strong>
                     </button>
@@ -122,9 +120,7 @@
                 </div>
                 <div class="back" style="display: none;">
                     <h1>Quotes</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, veritatis? Amet
-                        corporis temporibus nemo laudantium eius? Ducimus delectus, ea, doloribus architecto minus
-                        consectetur nesciunt saepe magnam at labore deleniti molestias.</p>
+                    <p>dcfjkhnewbsdvkjchrbdsdjg fcbekrstdhfciexvksrhdcg ikfvxrnhdkicf,d gsynhvxirky,ekdhv</p>
                     <button class="btn btn-outline-warning mx-auto" onclick="toggleFlip(this.parentNode.parentNode)">
                         <strong>Flip Back</strong>
                     </button>
@@ -134,23 +130,23 @@
         </div>
     </section>
     <script>
-    window.onload = function () {
-        var username = localStorage.getItem('username');
-        if (username) {
-            document.querySelector('.navbar-brand').innerHTML = '<img src="Asset/money.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Hello, ' + username;
+        window.onload = function () {
+            var username = localStorage.getItem('username');
+            if (username) {
+                document.querySelector('.navbar-brand').innerHTML = '<img src="Asset/money.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Hello, ' + username;
+            }
         }
-    }
-    function toggleFlip(element) {
-        var front = element.querySelector('.front');
-        var back = element.querySelector('.back');
-        if (front.style.display === "none") {
-            front.style.display = "block";
-            back.style.display = "none";
-        } else {
-            front.style.display = "none";
-            back.style.display = "block";
+        function toggleFlip(element) {
+            var front = element.querySelector('.front');
+            var back = element.querySelector('.back');
+            if (front.style.display === "none") {
+                front.style.display = "block";
+                back.style.display = "none";
+            } else {
+                front.style.display = "none";
+                back.style.display = "block";
+            }
         }
-    }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

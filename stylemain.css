@@ -9,7 +9,11 @@ body {
 }
 
 .container-fluid {
-max-width: 95%;
+  max-width: 95%;
+}
+
+.navbar .container-fluid {
+  max-width: 100%;
 }
 
 #balance-container {
@@ -19,55 +23,55 @@ max-width: 95%;
 }
 
 .transaction {
-font-family: monospace;
-width: 90%;
-margin: auto;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px;
-border-bottom: 1px solid #ccc;
-background-color: #f8f8f8;
+  font-family: monospace;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f8f8f8;
 }
 
 .transaction p {
-margin: 0;
+  margin: 0;
 }
 
-.transaction .type{
-color: black;
+.transaction .type {
+  color: black;
 }
 
-.transaction .name{
-color: gray;
+.transaction .name {
+  color: gray;
 }
 
 .transaction .transaction-details {
-display: flex;
-flex-direction: column;
-justify-content: center;
-flex: 3;
-overflow: hidden; 
-text-overflow: ellipsis;
-white-space: nowrap; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 
 .transaction .nominal {
-flex: 1;
-text-align: right;
+  flex: 1;
+  text-align: right;
 }
 
 .income-transaction {
-background-color: #87ff917a;
-border-radius: 20px;
-margin-top: 10px;
-margin-bottom: 10px;
+  background-color: #87ff917a;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .outcome-transaction {
-background-color: #ff6f857a; 
-border-radius: 20px;
-margin-top: 10px;
-margin-bottom: 10px;
+  background-color: #ff6f857a;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

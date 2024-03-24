@@ -48,11 +48,14 @@ body {
 }
 
 .kotak {
+	display: flex;
 	padding: 16px;
 	background: #282a3aea;
 	border-radius: 15px;
 	transition: all .38s ease;
 	perspective: 1000px;
+	height: 100%;
+	align-items: center;
 }
 
 .kotak h3 {
@@ -86,4 +89,8 @@ body {
 	.title h1 {
 		font-size: 3.2rem;
 	}
+}
+
+.back {
+	color: #ffffff;
 }
