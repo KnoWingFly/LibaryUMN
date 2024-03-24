@@ -15,37 +15,35 @@
 
 <body>
 <!---------------------------------------------------------------------------------------------Navigation Bar--------------------------------------------------------------------------------------------->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto me-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto me-3">
               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="main.html">Main</a>
+                <a class="nav-link active" aria-current="page" href="main.html">Main</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="income.html">Income</a>
+                <a class="nav-link" href="income.html">Income</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="outcome.html">Outcome</a>
+                <a class="nav-link" href="outcome.html">Outcome</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="goals.html">Goals</a>
+                <a class="nav-link" href="goals.html">Goals</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="aboutus.html">About Us</a>
+                <a class="nav-link" href="aboutus.html">About Us</a>
               </li>
-          </ul>
-      </div>
-  </div>
-</nav>
+            </ul>
+          </div>
+        </div>
+      </nav>
   <!---------------------------------------------------------------------------------------------Main Menu--------------------------------------------------------------------------------------------->
-  <div id="transaction-interface" class="container-fluid">
-    
+  <div class="container-fluid">
     <div class="row mt-5 d-flex align-items-start">
       <div id="balance-container" class="col-12 col-lg-5 me-0 me-lg-5 rounded p-2">
         <div class="row">
@@ -58,18 +56,22 @@
         </div>
       </div>
 
-      <div class="col-12 text-start col-lg-6 mt-5 mt-lg-0 rounded">
+      <div class="col-12 text-start col-lg-6 mt-5 mt-lg-0 rounded" style="background-color: white;">
         <h2 class="transactions"></h2>
       </div>
 
     </div>
 
-    <div class="row justify-content-center justify-content-lg-end">
-      <div class="col-12 col-lg-6 text-center text-lg-end mt-4">
-        <button onclick="resetData()" class="btn btn-danger">Reset Data</button>
-      </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row justify-content-center justify-content-lg-end">
+    <div class="col-12 col-lg-6 text-center text-lg-end mt-4 me-lg-5">
+        <button onclick="resetData()" class="btn btn-outline-danger">Reset Data</button>
     </div>
   </div>
+</div>
+
 <!---------------------------------------------------------------------------------------------Javascript--------------------------------------------------------------------------------------------->
 <script>
 //---------------------------------------------------------------------------------------------Name in Hello -----------------------------------------------------------------------------------------//

@@ -55,17 +55,19 @@
             Do you want to decrease your balance by the goal amount?
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" id="close" data-dismiss="modal">No</button>
-            <button type="button" class="btn btn-primary" id="confirmBtn">Yes</button>
+            <button type="button" class="btn btn-outline-dark" id="close" data-dismiss="modal">No</button>
+            <button type="button" class="btn btn-outline-dark" id="confirmBtn">Yes</button>
           </div>
         </div>
       </div>
     </div>  
   
     <div class="row justify-content-center">
-      <div class="col-12 col-md-8 mt-4 mb-4">
-        <h1>Goals</h1>
-        <div class="form-group">
+      <div class="mt-5"></div>
+      <div class="col-12 col-md-8 mb-4">
+        <h1 id="title" class="text-center mb-5"><strong>Goals</strong></h1>
+        <div id="kotak">
+        <div class="form-group mt-4">
             <label for="goal">Goal:</label>
             <input type="text" class="form-control form-control-lg" id="goal" placeholder="Enter your financial goal">
         </div>
@@ -74,9 +76,9 @@
             <input type="number" class="form-control form-control-lg" id="amount" placeholder="Enter the amount">
         </div>
         <div class="d-grid justify-content-end mt-4">
-        <button class="btn btn-primary btn-lg" id="saveGoal">Save Goal</button>
+        <button class="btn btn-outline-warning btn-lg mb-4 mt-3" id="saveGoal">Save Goal</button>
         </div>
-        <hr>
+      </div>
       </div>
     </div>
   
@@ -283,6 +285,7 @@
   //--------------------------------------------------------------------------------------------Display Goals-----------------------------------------------------------------------------------------//
   function displayGoal(goal, index) {
     $('.container').append(`
+      <div class="border">
         <div class="row" id="goalContainer${index}">
             <div class="col-12">
                 <h2>${goal.name}</h2>
@@ -290,12 +293,13 @@
                     <div class="progress-bar" role="progressbar" style="width: 0%; background-color: ${goal.color};" id="progressBar${index}"></div>
                 </div>
                 <p>Amount: ${goal.amount}</p>
-                <div class="d-flex justify-content-between">
-                    <button class="btn btn-danger" id="deleteGoal${index}">Delete</button>
-                    <button class="btn btn-primary" id="finishGoal${index}">Finish</button>
+                <div class="d-flex justify-content-between mb-4">
+                    <button class="btn btn-outline-warning" id="deleteGoal${index}">Delete</button>
+                    <button class="btn btn-outline-warning" id="finishGoal${index}">Finish</button>
                 </div>
             </div>
         </div>
+      </div>
     `);
 }
 
