@@ -48,14 +48,10 @@ body {
 }
 
 .kotak {
-	display: flex;
 	padding: 16px;
 	background: #282a3aea;
 	border-radius: 15px;
 	transition: all .38s ease;
-	perspective: 1000px;
-	height: 100%;
-	align-items: center;
 }
 
 .kotak h3 {
@@ -79,6 +75,55 @@ body {
 	background-color: #745900ab;
 }
 
+.popup .overlay {
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 1;
+	display: none;
+}
+
+.popup .content {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	background: #fff;
+	width: 450px;
+	height: 220px;
+	z-index: 2;
+	text-align: center;
+	padding: 20%;
+	box-sizing: border-box;
+}
+
+.popup .close-btn {
+	position: fixed;
+	right: 20px;
+	top: 20px;
+	width: 30px;
+	height: 30px;
+	background: #222;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 50%;
+}
+
+.popup.active .overlay {
+	display: block;
+}
+
+.popup.active .content {
+	transition: all 300ms ease-in-out;
+	transform: translate(-50%, -50%) scale(1);
+}
+
 @media(max-width: 1240px) {
 	.team {
 		width: 100%;
@@ -89,8 +134,4 @@ body {
 	.title h1 {
 		font-size: 3.2rem;
 	}
-}
-
-.back {
-	color: #ffffff;
 }

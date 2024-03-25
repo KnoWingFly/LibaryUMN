@@ -8,17 +8,17 @@ body {
     font-family: monospace;
 }
 
-#title{
+#title {
     color: #000000;
-	font-size: 4rem;
-	text-align: center;
+    font-size: 4rem;
+    text-align: center;
 }
 
 #success {
     color: #282A3A;
 }
 
-#kotak{
+#kotak {
     padding: 17px;
     color: #FFC107;
     background-color: #282a3aea;
@@ -31,8 +31,8 @@ body {
 }
 
 .progress {
-    height: 2rem; 
-  }
+    height: 2rem;
+}
 
 .border {
     background-color: #282a3aea;
